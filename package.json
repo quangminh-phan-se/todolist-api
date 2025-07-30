@@ -20,7 +20,11 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "migration:create": "typeorm migration:create ./src/migrations/${MIGRATION_NAME}",
+    "migration:run": "npm run typeorm -- --dataSource=src/config/typeorm-cli.config.ts migration:run",
+    "migration:revert": "npm run typeorm -- --dataSource=src/config/typeorm-cli.config.ts migration:revert"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint . --fix"
@@ -31,6 +35,7 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.0",
+    "dotenv": "^17.2.1",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
