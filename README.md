@@ -30,7 +30,13 @@ Install dependencies
 
 ```bash
 cd todolist-api
+
 pnpm install
+```
+Run development environment
+
+```bash
+pnpm start:dev
 ```
 
 ### 2. Copy environment variables:
@@ -65,6 +71,12 @@ migration:run
 # Revert last migration
 pnpm migration:revert
 ```
+
+## 📘 API Documentation (Swagger)
+
+Once the server is running, open:
+
+👉 http://localhost:3001/api
 
 ## License
 
